@@ -285,11 +285,11 @@ System prompt: You are a helpful assistant. Your name is MiniMax-M2.1 and is bui
 ### Dense model testing:
 Qwen3-VL-32B-Instruct-UD-Q4_K_XL.gguf - 35.5 t/s
 
-llama-server --model Qwen3-VL-32B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q4_0 --cache-type-v q4_0 --ctx-size 4096
+llama-server --model Qwen3-VL-32B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q4_0 --cache-type-v q4_0 --ctx-size 8192
 
 Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf (note the use of a second hard drive- simply copy and paste the name of the file using the Linux file system GUI) - 38.4 t/s
 
-llama-server --model /media/dano/models/LLM-Models/Mistral/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL-GGUF/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.15 --min-p 0.01 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
+llama-server --model /media/dano/models/LLM-Models/Mistral/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL-GGUF/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.15 --min-p 0.01 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
 ### Another large model GLM-4.5-Air-UD-Q4_K_XL (~64GB)- 20 t/s
 
@@ -299,19 +299,19 @@ llama-server --model /media/dano/models/llamacpp-models/GLM-4.5-Air-UD-Q4_K_XL-0
 
 -fit on - 44.6 t/s
 
-llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
 -ot ".ffn_.*_exps.=CPU" - 34 t/s
 
-llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -ot ".ffn_.*_exps.=CPU" --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -ot ".ffn_.*_exps.=CPU" --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
 -ot ".ffn_(up|down)_exps.=CPU" - 40.25 t/s
 
-llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -ot ".ffn_(up|down)_exps.=CPU" --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -ot ".ffn_(up|down)_exps.=CPU" --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
 Manual setting- --n-cpu-moe 24 -ngl 99 - 44.6 t/s
 
-llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 --n-cpu-moe 24 -ngl 99 --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 --n-cpu-moe 24 -ngl 99 --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
 
 

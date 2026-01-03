@@ -17,5 +17,6 @@ A good size to start is 60-80GB for the Linux disk. However, if you plan to stor
 This guide will also show how to access model files on other hard disks in the PC.
 
 Running the Disk Management program:
+
 <img width="586" height="511" alt="1-diskmgmt" src="https://github.com/user-attachments/assets/e8afd4fc-5acc-40aa-bfb7-73e5ca0d501b" />
 

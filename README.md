@@ -26,7 +26,8 @@ Next, choose your main boot drive, right click on the C: volume, then pick the S
 
 Next, choose how large a new partition should be created for the Linux install. In this case I picked 250,000 MB, which is 250 GB:
 
-<img width="423" height="276" alt="5-diskmgmt" src="https://github.com/user-attachments/assets/fb3fd7ef-6cba-4116-aa56-1d3240e79517" />
+<img width="629" height="286" alt="4-diskmgmt" src="https://github.com/user-attachments/assets/6792282d-9ed4-4311-a4db-862ed1f934b4" />
+
 
 That is all you need for the Windows PC. From now on, the rest of the guide will focus on installing and configuring Mint Cinnamon Linux and Llama.cpp.
 

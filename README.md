@@ -70,7 +70,14 @@ Here is the important bit- Mint will detect the partition you made on the C: dri
 
 Once the installation finished, remove the USB flash drive then press enter to reboot:
 
-<img width="503" height="185" alt="IMG_4434" src="https://github.com/user-attachments/assets/60026171-3f9d-4073-8b33-ef0e2c57f6f0" />
+<img width="403" height="125" alt="IMG_4434" src="https://github.com/user-attachments/assets/60026171-3f9d-4073-8b33-ef0e2c57f6f0" />
+
+Your computer will now reboot into the Grub boot loader, which provides options for booting into Mint or Windows:
+
+<img width="425" height="95" alt="IMG_4435" src="https://github.com/user-attachments/assets/cf713164-9a0a-46ee-ab66-81414c858e43" />
+
+
+
 
 
 

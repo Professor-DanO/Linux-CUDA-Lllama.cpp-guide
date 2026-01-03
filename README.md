@@ -41,21 +41,21 @@ That is all you need for the Windows PC. From now on, the rest of the guide will
 
 # Downloading and installing Linux Mint
 
-Next, download the Mint Cinammon Linux ISO install file:
+### Download the Mint Cinammon Linux ISO install file:
 
 [Linux Mint 22.2 "Zara" Cinnamon Edition](https://www.linuxmint.com/edition.php?id=322)
 
 <img width="783" height="495" alt="7-mint" src="https://github.com/user-attachments/assets/113861cd-1fea-41fa-ab67-4399231c8e04" />
 
-You will need to create a bootable USB flash drive (8GB or larger). I recommend using Rufus to create the bootable drive:
+### Create a bootable USB flash drive (8GB or larger). I recommend using Rufus to create the bootable drive:
 
 [Rufus Download](https://rufus.ie/en/#download)
 
-Run Rufus, then select the Mint ISO file that you downloaded, then click Start:
+### Run Rufus, then select the Mint ISO file that you downloaded, then click Start:
 
 <img width="347" height="437" alt="9-mint" src="https://github.com/user-attachments/assets/1e0229af-b875-4420-86db-01920b9ed804" />
 
-Reboot your computer, then press the appropriate key to enter the boot device selection menu (typically F12), and choose the USB flash drive. Apologies for the potato quality phone photos.
+### Reboot your computer, then press the appropriate key to enter the boot device selection menu (typically F12), and choose the USB flash drive. Apologies for the potato quality phone photos.
 
 <img width="450" height="200" alt="IMG_4427" src="https://github.com/user-attachments/assets/4bda77f4-a312-454c-91e7-e53cdfb5f983" />
 
@@ -63,7 +63,7 @@ Once Mint boots, choose the top selection:
 
 <img width="400" height="170" alt="IMG_4428" src="https://github.com/user-attachments/assets/592e292a-16a7-417f-9da0-78091d96c9d5" />
 
-Click on the Install Mint icon in the upper-left corner:
+### Click on the Install Mint icon in the upper-left corner:
 
 <img width="320" height="125" alt="IMG_4429" src="https://github.com/user-attachments/assets/c3c96a84-8df9-4b35-b3af-3451e86fe13d" />
 
@@ -77,7 +77,7 @@ Here is the important bit- Mint will detect the partition you made on the C: dri
 
 <img width="486" height="226" alt="IMG_4432" src="https://github.com/user-attachments/assets/7df982af-3724-432c-b272-8671324e80b8" />
 
-Once the installation finished, remove the USB flash drive then press enter to reboot:
+### Once the installation finished, remove the USB flash drive then press enter to reboot:
 
 <img width="403" height="125" alt="IMG_4434" src="https://github.com/user-attachments/assets/60026171-3f9d-4073-8b33-ef0e2c57f6f0" />
 
@@ -91,16 +91,16 @@ You will be greeted with the following screen when logging in for the first time
 
 <img width="399" height="272" alt="21-mint" src="https://github.com/user-attachments/assets/3230f12d-ae87-4943-90eb-25c19eeb2955" />
 
-First, let's start with some Nvidia driver updates- this guide uses the recommended Nvidia 580 open set of graphics drivers:
+### Start with some Nvidia driver updates- this guide uses the recommended Nvidia 580 open set of graphics drivers:
 
 <img width="398" height="273" alt="22-Mint" src="https://github.com/user-attachments/assets/b88c6b52-64cc-4d1b-9a93-8fe92aa70799" />
 <img width="395" height="273" alt="23-Mint" src="https://github.com/user-attachments/assets/9aceb116-236e-46eb-8fd7-941633d9fc03" />
 
 
-Next, set up some Firewall Security by clicking the Status button so it is enabled:
+### Set up Firewall Security by clicking the Status button so it is enabled:
 <img width="492" height="275" alt="24-Mint" src="https://github.com/user-attachments/assets/e0e86605-3e5e-4381-8afd-44c2c6b5d682" />
 
-Now get the system updated:
+### Get the system updated:
 
 <img width="612" height="300" alt="25-Mint" src="https://github.com/user-attachments/assets/860584bb-66d5-427e-89cd-66acecadc162" />
 <img width="774" height="300" alt="26-Mint" src="https://github.com/user-attachments/assets/c3fdceb3-9f80-4547-9809-0bb25b54a60c" />
@@ -126,7 +126,7 @@ You will now see a set of commands to use in the terminal:
 
 <img width="506" height="164" alt="34-CUDA" src="https://github.com/user-attachments/assets/d9e0bf6d-a4a6-4ae2-ae3c-1735423ffa61" />
 
-Installation Instructions from the command line in a terminal window:
+### Installation Instructions from the command line in a terminal window:
 
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
 
@@ -139,7 +139,7 @@ sudo apt-get -y install cuda-toolkit-13-1
 
 After the installation is complete, you will need to open bash.rc with a text editor and add the CUDA Toolkit path information. I used the Nano editor, and to save the file use CTRL-X, then Enter, then Enter.
 
-nano ~/.bash.rc
+### nano ~/.bash.rc
 
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 
@@ -152,16 +152,16 @@ Close the terminal window, then open a new terminal window for the new path to t
 <img width="217" height="67" alt="39-CUDA" src="https://github.com/user-attachments/assets/dbfd5631-a0f5-4c87-957f-dbd67bbb02ec" />
 
 
-Installing Llama.cpp
+# Installing and configuring Llama.cpp
 
 The following guide is mostly taken from the ggml-org Github repository, along with some additional information to get it all working properly. Make sure you are in your working home directory (pwd).
 [Llama.cpp](https://github.com/ggml-org/llama.cpp)
 
-Install Git:
+### Install Git:
 
 sudo apt install git
 
-Clone the repo:
+### Clone the repo:
 
 git clone https://github.com/ggml-org/llama.cpp
 
@@ -169,26 +169,26 @@ Change the directory
 
 cd llama.cpp
 
-Install cmake:
+### Install cmake:
 
 git clone https://github.com/ggml-org/llama.cpp
 
-Install the necessary development libraries (to prevent the CURL not found error later):
+### Install the necessary development libraries (to prevent the CURL not found error later):
 
 sudo apt install libcurl4-openssl-dev libssl-dev
 
-Build llama.cpp part 1:
+### Build llama.cpp part 1:
 
 cmake -B build -DGGML_CUDA=ON -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=ON -DGGML_CUDA_FA_ALL_QUANTS=ON
 
-Build llama.cpp part 2 (takes a while):
+### Build llama.cpp part 2 (takes a while):
 
 cmake --build build --config Release -j --clean-first
 
 <img width="508" height="320" alt="41-llamacpp" src="https://github.com/user-attachments/assets/f3574667-73ac-4888-8a41-dfb2fbe1c7ec" />
 
 
-Edit the bash.rc file again to add the llama.cpp path. Add the following two lines and a commented description if you like:
+### Edit the bash.rc file again to add the llama.cpp path. Add the following two lines and a commented description if you like:
 
 export LLAMACPP=/home/dano/llama.cpp
 
@@ -198,11 +198,13 @@ Exit the current terminal window and start a new terminal window for the path se
 
 You are all done with the installations and configurations- congratulations! It is now time to start working with model inference.
 
+# Choosing and Downloading Model Files
+
 I recommend that you download a small model to start. A great place to get started is the unsloth repositories on HuggingFace:
 
 [Unsloth Qwen3-4B-Instruct-2507](https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF)
 
-Here is the direct link to the Q6 model download:
+### Here is the direct link to the Q6 model download:
 
 (https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF/blob/main/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf)
 
@@ -212,7 +214,7 @@ You should also check out the Best Practices page for the model, which will give
 
 For this model, the following are recommended, and we'll see how to set up llama.cpp with this shortly:
 
-Instruct Model Settings:
+### Instruct Model Settings:
 
 Temperature = 0.7
 
@@ -226,13 +228,13 @@ presence_penalty = 1.0
 
 Once you've downloaded the model, it should be in the following directory (YMMV):
 
-/home/dano/Downloads
+/home/dano/Downloads/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf
 
-# Starting up llama-server
+# Starting up Llama-server and running your first inference
 
 We are going to use the command line interface to start the llama-server program. There are many settings that can be adjusted, and most of them will be covered here.
 
-Start a terminal window, then (assuming your model file is in the Downloads folder), enter the following:
+### Start a terminal window, then (assuming your model file is in the Downloads folder), enter the following:
 
 llama-server --model Downloads/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --ctx-size 32768
 
@@ -240,48 +242,51 @@ If everything works correctly, you should see a link to http://127.0.0.1:8080 on
 
 <img width="634" height="527" alt="48-llamacpp" src="https://github.com/user-attachments/assets/f39cf97a-a4d1-4b55-9418-1db457f6cf5e" />
 
-My tests where done with the following prompt- Write a Flappy Bird game program in Java.
+### My tests were done with the following prompt-
 
-You can also quantize the KV cache to 8bits to use less RAM and hopefully speed things up:
+Write a Flappy Bird game program in Java.
+
+### Quantize the KV cache to 8bits to use less RAM and hopefully speed things up:
 
 llama-server --model Downloads/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 32768
 
 # Benchmark results with RTX 3090 FE and 96GB of DDR5 6800 RAM:
-Each test was run three times, with the average of the three token generation times provided for each model. the prompt was:
+Each test was run three times, with the average of the three token generation times provided for each model. The prompt was:
 
 Write a Flappy Bird game program in Java.
 
-Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- 44.6 t/s
+### Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- 44.6 t/s
+
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
-Larger quant version of Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL - 33.7 t/s
+### Larger quant version of Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL - 33.7 t/s
 
 Note the new settings for different hard drive location (/media/dano/models/LLM-Models/QWEN3-MOE/..) and split, two-part model files (..00001-of-00002.gguf): 
 
 llama-server --model /media/dano/models/LLM-Models/QWEN3-MOE/Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL-GGUF/Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL-00001-of-00002.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
 
 
-gpt-oss-120b-UD-Q4_K_XL - 34.5 t/s (with split file of two gguf parts):
+### gpt-oss-120b-UD-Q4_K_XL - 34.5 t/s (with split file of two gguf parts):
 
 llama-server --model gpt-oss-120b-UD-Q4_K_XL-00001-of-00002.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 1.0 --top-k 0.0 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
-GPT-OSS-20b MXFP4- 170 t/s (located on second hard drive)
+### GPT-OSS-20b MXFP4- 170 t/s (located on second hard drive)
 
 llama-server --model /media/dano/models/LLM-Models/GPT-OSS/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 1.0 --top-k 0.0 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
-Long context- 60K text prompt, 66K context- Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- prompt processing 675 t/s, token generation 38 t/s
+### Long context- 60K text prompt, 66K context- Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- prompt processing 675 t/s, token generation 38 t/s
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 66000
 
-Very long context- 205K text prompt, 260K context- Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- prompt processing 585 t/s, token generation 26 t/s
+### Very long context- 205K text prompt, 260K context- Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- prompt processing 585 t/s, token generation 26 t/s
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 66000
 
-Large Model test - MiniMax-M2.1- (about the largest I could fit with room for some decent context and kv cache ~ 102GB) - 20 t/s
+### Large Model test - MiniMax-M2.1- (about the largest I could fit with room for some decent context and kv cache ~ 102GB) - 20 t/s
 
 llama-server --model /media/dano/models/LLM-Models/MiniMax-M2.1/MiniMax-M2.1-UD-Q3_K_XL-00001-of-00003.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 0.95 --top-k 40 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
 System prompt: You are a helpful assistant. Your name is MiniMax-M2.1 and is built by MiniMax.
 
-Dense model testing:
+### Dense model testing:
 Qwen3-VL-32B-Instruct-UD-Q4_K_XL.gguf - 35.5 t/s
 
 llama-server --model Qwen3-VL-32B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q4_0 --cache-type-v q4_0 --ctx-size 4096
@@ -290,11 +295,11 @@ Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf (note the use of a second har
 
 llama-server --model /media/dano/models/LLM-Models/Mistral/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL-GGUF/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.15 --min-p 0.01 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
 
-Large Model again using another drive for model storage- GLM-4.5-Air-UD-Q4_K_XL (~64GB)- 20 t/s
+### Large Model again using another drive for model storage- GLM-4.5-Air-UD-Q4_K_XL (~64GB)- 20 t/s
 
 llama-server --model /media/dano/models/llamacpp-models/GLM-4.5-Air-UD-Q4_K_XL-split-00001-of-00002.gguf --port 8080  -fit on --jinja --temp 0.8 --top-p 0.6 --top-k 2 --repeat-penalty 1.1 --min-p 0.0 --seed 3407 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
-Testing performace of the new '-fit on' flag in llama.cpp versus other methods:
+### Testing performace of the new '-fit on' flag in llama.cpp versus other methods:
 
 -fit on - 44.6 t/s
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096

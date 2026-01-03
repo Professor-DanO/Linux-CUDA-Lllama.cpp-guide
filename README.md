@@ -171,7 +171,7 @@ Build llama.cpp part 1:
 
 cmake -B build -DGGML_CUDA=ON -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=ON -DGGML_CUDA_FA_ALL_QUANTS=ON
 
-Build llama.cpp part 2 (takes awhile):
+Build llama.cpp part 2 (takes a while):
 
 cmake --build build --config Release -j --clean-first
 
@@ -186,7 +186,117 @@ export PATH=$LLAMACPP/build/bin:$PATH
 
 Exit the current terminal window and start a new terminal window for the path settings to take effect.
 
+You are all done with the installations and configurations- congratulations! It is now time to start working with model inference.
 
+I recommend that you download a small model to start. A great place to get started is the unsloth repositories on HuggingFace:
+
+[Unsloth Qwen3-4B-Instruct-2507](https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF)
+
+Here is the direct link to the Q6 model download:
+
+(https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF/blob/main/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf)
+
+You should also check out the Best Practices page for the model, which will give you important information about proper settings:
+
+(https://unsloth.ai/docs/models/qwen3-how-to-run-and-fine-tune/qwen3-2507)
+
+For this model, the following are recommended, and we'll see how to set up llama.cpp with this shortly:
+
+Instruct Model Settings:
+
+Temperature = 0.7
+
+Min_P = 0.00 (llama.cpp's default is 0.1)
+
+Top_P = 0.80
+
+TopK = 20
+
+presence_penalty = 1.0
+
+Once you've downloaded the model, it should be in the following directory (YMMV):
+
+/home/dano/Downloads
+
+# Starting up llama-server
+
+We are going to use the command line interface to start the llama-server program. There are many settings that can be adjusted, and most of them will be covered here.
+
+Start a terminal window, then (assuming your model file is in the Downloads folder), enter the following:
+
+llama-server --model Downloads/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --ctx-size 32768
+
+If everything works correctly, you should see a link to http://127.0.0.1:8080 on the screen. Start your Firefox web browser, enter that addresses, and you should see the Chat Window open!
+
+<img width="634" height="527" alt="48-llamacpp" src="https://github.com/user-attachments/assets/f39cf97a-a4d1-4b55-9418-1db457f6cf5e" />
+
+My tests where done with the following prompt- Write a Flappy Bird game program in Java.
+
+You can also quantize the KV cache to 8bits to use less RAM and hopefully speed things up:
+
+llama-server --model Downloads/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 32768
+
+# Benchmark results with RTX 3090 FE and 96GB of DDR5 6800 RAM:
+Each test was run three times, with the average of the three token generation times provided for each model. the prompt was:
+
+Write a Flappy Bird game program in Java.
+
+Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- 44.6 t/s
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
+
+Larger quant version of Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL - 33.7 t/s
+
+Note the new settings for different hard drive location (/media/dano/models/LLM-Models/QWEN3-MOE/..) and split, two-part model files (..00001-of-00002.gguf): 
+
+llama-server --model /media/dano/models/LLM-Models/QWEN3-MOE/Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL-GGUF/Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL-00001-of-00002.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
+
+
+gpt-oss-120b-UD-Q4_K_XL - 34.5 t/s (with split file of two gguf parts):
+
+llama-server --model gpt-oss-120b-UD-Q4_K_XL-00001-of-00002.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 1.0 --top-k 0.0 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
+
+GPT-OSS-20b MXFP4- 170 t/s (located on second hard drive)
+
+llama-server --model /media/dano/models/LLM-Models/GPT-OSS/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 1.0 --top-k 0.0 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
+
+Long context- 60K text prompt, 66K context- Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- prompt processing 675 t/s, token generation 38 t/s
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 66000
+
+Very long context- 205K text prompt, 260K context- Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- prompt processing 585 t/s, token generation 26 t/s
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 66000
+
+Large Model test - MiniMax-M2.1- (about the largest I could fit with room for some decent context and kv cache ~ 102GB) - 20 t/s
+
+llama-server --model /media/dano/models/LLM-Models/MiniMax-M2.1/MiniMax-M2.1-UD-Q3_K_XL-00001-of-00003.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 0.95 --top-k 40 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
+
+System prompt: You are a helpful assistant. Your name is MiniMax-M2.1 and is built by MiniMax.
+
+Dense model testing:
+Qwen3-VL-32B-Instruct-UD-Q4_K_XL.gguf - 35.5 t/s
+
+llama-server --model Qwen3-VL-32B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q4_0 --cache-type-v q4_0 --ctx-size 4096
+
+Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf (note the use of a second hard drive- simply copy and paste the name of the file using the Linux file system GUI) - 38.4 t/s
+
+llama-server --model /media/dano/models/LLM-Models/Mistral/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL-GGUF/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.15 --min-p 0.01 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
+
+Large Model again using another drive for model storage- GLM-4.5-Air-UD-Q4_K_XL (~64GB)- 20 t/s
+
+llama-server --model /media/dano/models/llamacpp-models/GLM-4.5-Air-UD-Q4_K_XL-split-00001-of-00002.gguf --port 8080  -fit on --jinja --temp 0.8 --top-p 0.6 --top-k 2 --repeat-penalty 1.1 --min-p 0.0 --seed 3407 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
+
+Testing performace of the new '-fit on' flag in llama.cpp versus other methods:
+
+-fit on - 44.6 t/s
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
+
+-ot ".ffn_.*_exps.=CPU" - 34 t/s
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -ot ".ffn_.*_exps.=CPU" --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
+
+-ot ".ffn_(up|down)_exps.=CPU" - 40.25 t/s
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -ot ".ffn_(up|down)_exps.=CPU" --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
+
+Manual setting- --n-cpu-moe 24 -ngl 99 - 44.6 t/s
+llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 --n-cpu-moe 24 -ngl 99 --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
 
 
 

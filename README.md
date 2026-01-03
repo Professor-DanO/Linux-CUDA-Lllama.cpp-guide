@@ -13,7 +13,7 @@ The following equipment was used:
 # Preparations
 To begin, make sure to back up all your important information, along with creating a Windows recovery drive:
 
-[MS Recovery Drive Instructions] (https://support.microsoft.com/en-us/windows/recovery-drive-abb4691b-5324-6d4a-8766-73fab304c246)
+[MS Recovery Drive Instructions](https://support.microsoft.com/en-us/windows/recovery-drive-abb4691b-5324-6d4a-8766-73fab304c246)
 
 It is also helpful to have a Windows 10 or 11 bootable installation USB Flash Drive, especially if you want to remove the Linux system and boot loader:
 

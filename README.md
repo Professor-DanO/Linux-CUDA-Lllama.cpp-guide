@@ -47,6 +47,13 @@ Run Rufus, then select the Mint ISO file that you downloaded, then click Start:
 
 <img width="347" height="437" alt="9-mint" src="https://github.com/user-attachments/assets/1e0229af-b875-4420-86db-01920b9ed804" />
 
+Reboot your computer, then press the appropriate key to enter the boot device selection menu (typically F12), and choose the USB flash drive:
+
+![IMG_4427](https://github.com/user-attachments/assets/b69008fa-a09d-4075-b730-53389dfc65d4)
+
+
+
+
 
 
 

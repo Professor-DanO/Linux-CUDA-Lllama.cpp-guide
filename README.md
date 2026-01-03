@@ -142,6 +142,51 @@ Close the terminal window, then open a new terminal window for the new path to t
 <img width="217" height="67" alt="39-CUDA" src="https://github.com/user-attachments/assets/dbfd5631-a0f5-4c87-957f-dbd67bbb02ec" />
 
 
+Installing Llama.cpp
+
+The following guide is mostly taken from the ggml-org Github repository, along with some additional information to get it all working properly. Make sure you are in your working home directory (pwd).
+[Llama.cpp](https://github.com/ggml-org/llama.cpp)
+
+Install Git:
+
+sudo apt install git
+
+Clone the repo:
+
+git clone https://github.com/ggml-org/llama.cpp
+
+Change the directory
+
+cd llama.cpp
+
+Install cmake:
+
+git clone https://github.com/ggml-org/llama.cpp
+
+Install the necessary development libraries (to prevent the CURL not found error later):
+
+sudo apt install libcurl4-openssl-dev libssl-dev
+
+Build llama.cpp part 1:
+
+cmake -B build -DGGML_CUDA=ON -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=ON -DGGML_CUDA_FA_ALL_QUANTS=ON
+
+Build llama.cpp part 2 (takes awhile):
+
+cmake --build build --config Release -j --clean-first
+
+<img width="508" height="320" alt="41-llamacpp" src="https://github.com/user-attachments/assets/f3574667-73ac-4888-8a41-dfb2fbe1c7ec" />
+
+
+Edit the bash.rc file again to add the llama.cpp path. Add the following two lines and a commented description if you like:
+
+export LLAMACPP=/home/dano/llama.cpp
+
+export PATH=$LLAMACPP/build/bin:$PATH
+
+Exit the current terminal window and start a new terminal window for the path settings to take effect.
+
+
 
 
 

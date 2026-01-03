@@ -18,5 +18,5 @@ This guide will also show how to access model files on other hard disks in the P
 
 Running the Disk Management program:
 
-<img width="586" height="511" alt="1-diskmgmt" src="https://github.com/user-attachments/assets/e8afd4fc-5acc-40aa-bfb7-73e5ca0d501b" />
+<img width="486" height="421" alt="1-diskmgmt" src="https://github.com/user-attachments/assets/e8afd4fc-5acc-40aa-bfb7-73e5ca0d501b" />
 

@@ -30,10 +30,6 @@ Next, choose how large a new partition should be created for the Linux install. 
 
 <img width="629" height="286" alt="4-diskmgmt" src="https://github.com/user-attachments/assets/6792282d-9ed4-4311-a4db-862ed1f934b4" />
 
-Click on the Install Mint icon in the upper-left corner:
-
-<img width="350" height="125" alt="IMG_4429" src="https://github.com/user-attachments/assets/c8fa4688-5fb7-42d4-a7bd-2df21afd58c4" />
-
 That is all you need for the Windows PC. From now on, the rest of the guide will focus on installing and configuring Mint Cinnamon Linux and Llama.cpp.
 
 Next, download the Mint Cinammon Linux ISO install file:
@@ -61,6 +57,11 @@ Once Mint boots, choose the top selection:
 Click on the Install Mint icon in the upper-left corner:
 
 <img width="320" height="125" alt="IMG_4429" src="https://github.com/user-attachments/assets/c3c96a84-8df9-4b35-b3af-3451e86fe13d" />
+
+Go through the standard OS installation routine, and create a username and password, along with choosing some settings:
+
+<img width="354" height="214" alt="IMG_4430" src="https://github.com/user-attachments/assets/60a13cb8-569c-4cb2-aedf-7182929acba9" />
+
 
 
 

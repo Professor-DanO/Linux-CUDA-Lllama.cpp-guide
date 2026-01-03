@@ -119,7 +119,7 @@ I also enabled automatic backups with the snapshot settings:
 
 # Downloading and Installing CUDA
 
-Several non-Nvidia guides and software suites are avaialable, but I found that Nvidia's CUDA 13.1 toolkit software and guide worked well after manually adding the paths in bash.rc. Start by downloading the correct package- Linux, x86_64, Ubuntu, 24.04. I used the deb (network) installer commands, but any of them work fine:
+While several guides and software suites are available, I found that Nvidia's CUDA 13.1 toolkit software and guide instructions well after manually adding the paths in bash.rc. Start by downloading the correct package- Linux, x86_64, Ubuntu, 24.04. I used the deb (network) installer commands, but any of them work fine:
 
 <img width="664" height="329" alt="33-CUDA" src="https://github.com/user-attachments/assets/cc01b949-f1ac-4b9c-9783-f14f28ad81b3" />
 
@@ -128,7 +128,7 @@ You will now see a set of commands to use in the terminal:
 <img width="506" height="164" alt="34-CUDA" src="https://github.com/user-attachments/assets/d9e0bf6d-a4a6-4ae2-ae3c-1735423ffa61" />
 
 ### Installation Instructions from the command line in a terminal window:
-
+```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
 
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
@@ -136,15 +136,15 @@ sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt-get update
 
 sudo apt-get -y install cuda-toolkit-13-1
-
+```
 
 After the installation is complete, you will need to open bash.rc with a text editor and add the CUDA Toolkit path information. I used the Nano editor, and to save the file use CTRL-X, then Enter, then Enter.
 
 ### nano ~/.bash.rc
 
-export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+```export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}```
 
 <img width="359" height="125" alt="37-CUDA" src="https://github.com/user-attachments/assets/221b059a-9a5a-434e-9341-a384cd410a56" />
 
@@ -160,7 +160,7 @@ The following guide is mostly taken from the ggml-org Github repository, along w
 
 ### Install Git:
 
-sudo apt install git
+```sudo apt install git```
 
 ### Clone the repo:
 
@@ -172,7 +172,7 @@ cd llama.cpp
 
 ### Install cmake:
 
-git clone https://github.com/ggml-org/llama.cpp
+sudo apt install cmake
 
 ### Install the necessary development libraries (to prevent the CURL not found error later):
 
@@ -201,7 +201,7 @@ You are all done with the installations and configurations- congratulations! It 
 
 # Choosing and Downloading Model Files
 
-I recommend that you download a small model to start. A great place to get started is the unsloth repositories on HuggingFace:
+I recommend that you download a small model to begin. A great place to get started is the unsloth repository collection on HuggingFace:
 
 [Unsloth Qwen3-4B-Instruct-2507](https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF)
 
@@ -225,15 +225,13 @@ Top_P = 0.80
 
 TopK = 20
 
-presence_penalty = 1.0
-
 Once you've downloaded the model, it should be in the following directory (YMMV):
 
 /home/dano/Downloads/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf
 
 # Starting up Llama-server and running your first inference
 
-We are going to use the command line interface to start the llama-server program. There are many settings that can be adjusted, and most of them will be covered here.
+Use the command line interface to start the llama-server program. There are many settings that can be adjusted, and most of them will be covered here.
 
 ### Start a terminal window, then (assuming your model file is in the Downloads folder), enter the following:
 
@@ -247,7 +245,7 @@ If everything works correctly, you should see a link to http://127.0.0.1:8080 on
 
 llama-server --model Downloads/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 32768
 
-# Benchmark results with RTX 3090 FE and 96GB of DDR5 6800 RAM:
+# My benchmark results with RTX 3090 FE and 96GB of DDR5 6800 RAM:
 Each test was run three times, with the average of the three token generation times provided for each model. Unless otherwise specified, the context size was 8192. The prompt was:
 
 Write a Flappy Bird game program in Java.

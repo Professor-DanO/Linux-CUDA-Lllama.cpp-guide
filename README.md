@@ -99,11 +99,15 @@ Now get the system updated:
 
 Under Power Management, I chose the Performance setting:
 
-<img width="774" height="300" alt="26-Mint" src="https://github.com/user-attachments/assets/d50530e9-d1e9-48d9-9148-a368e70abc34" />
+<img width="716" height="327" alt="30-Mint" src="https://github.com/user-attachments/assets/f2b95107-4d88-4c8e-a8ed-a1cb6d27cc9e" />
+
 
 I also enabled automatic backups with the snapshot settings:
 
-<img width="774" height="300" alt="26-Mint" src="https://github.com/user-attachments/assets/54d76b29-24e2-48f2-89f4-f10da3b7012b" />
+<img width="614" height="332" alt="32-Mint" src="https://github.com/user-attachments/assets/ebdd940f-5648-459e-92f3-f5f33b7ebbe7" />
+
+
+
 
 
 

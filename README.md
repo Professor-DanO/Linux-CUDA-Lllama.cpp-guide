@@ -76,6 +76,44 @@ Your computer will now reboot into the Grub boot loader, which provides options 
 
 <img width="425" height="95" alt="IMG_4435" src="https://github.com/user-attachments/assets/cf713164-9a0a-46ee-ab66-81414c858e43" />
 
+Getting Mint Linux ready to go- Updating, software settings, and security
+
+You will be greeted with the following screen when logging in for the first time, and there are some important steps to take within its menu system:
+
+<img width="399" height="272" alt="21-mint" src="https://github.com/user-attachments/assets/3230f12d-ae87-4943-90eb-25c19eeb2955" />
+
+First, let's start with some Nvidia driver updates- this guide uses the recommended Nvidia 580 open set of graphics drivers:
+
+<img width="398" height="273" alt="22-Mint" src="https://github.com/user-attachments/assets/b88c6b52-64cc-4d1b-9a93-8fe92aa70799" />
+<img width="395" height="273" alt="23-Mint" src="https://github.com/user-attachments/assets/9aceb116-236e-46eb-8fd7-941633d9fc03" />
+
+
+Next, set up some Firewall Security by clicking the Status button so it is enabled:
+<img width="492" height="275" alt="24-Mint" src="https://github.com/user-attachments/assets/e0e86605-3e5e-4381-8afd-44c2c6b5d682" />
+
+Now get the system updated:
+
+<img width="612" height="300" alt="25-Mint" src="https://github.com/user-attachments/assets/860584bb-66d5-427e-89cd-66acecadc162" />
+<img width="774" height="300" alt="26-Mint" src="https://github.com/user-attachments/assets/c3fdceb3-9f80-4547-9809-0bb25b54a60c" />
+
+
+Under Power Management, I chose the Performance setting:
+
+<img width="774" height="300" alt="26-Mint" src="https://github.com/user-attachments/assets/d50530e9-d1e9-48d9-9148-a368e70abc34" />
+
+I also enabled automatic backups with the snapshot settings:
+
+<img width="774" height="300" alt="26-Mint" src="https://github.com/user-attachments/assets/54d76b29-24e2-48f2-89f4-f10da3b7012b" />
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -108,9 +108,34 @@ I also enabled automatic backups with the snapshot settings:
 
 Installing CUDA
 
-Several non-Nvidia guides and software suites are avaialable, but I found that Nvidia's CUDA 13.1 toolkit software and guide worked well after manually adding the paths in bash.rc. Start by downloading the correct package:
+Several non-Nvidia guides and software suites are avaialable, but I found that Nvidia's CUDA 13.1 toolkit software and guide worked well after manually adding the paths in bash.rc. Start by downloading the correct package- Linux, x86_64, Ubuntu, 24.04. I used the deb (network) installer commands, but any of them work fine:
 
 <img width="664" height="329" alt="33-CUDA" src="https://github.com/user-attachments/assets/cc01b949-f1ac-4b9c-9783-f14f28ad81b3" />
+
+You will now see a set of commands to use in the terminal:
+
+<img width="506" height="164" alt="34-CUDA" src="https://github.com/user-attachments/assets/d9e0bf6d-a4a6-4ae2-ae3c-1735423ffa61" />
+
+Installation Instructions:
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
+
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+
+sudo apt-get update
+
+sudo apt-get -y install cuda-toolkit-13-1
+
+
+After the installation is complete, you will need to open bash.rc with a text editor and add the CUDA Toolkit path information. I used the Nano editor, and to save the file use CTRL-X, then Enter, then Enter.
+
+nano ~/.bash.rc
+
+<img width="359" height="125" alt="37-CUDA" src="https://github.com/user-attachments/assets/221b059a-9a5a-434e-9341-a384cd410a56" />
+
+
+
+
 
 
 

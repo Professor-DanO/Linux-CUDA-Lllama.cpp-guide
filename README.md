@@ -28,10 +28,21 @@ Next, choose how large a new partition should be created for the Linux install. 
 
 <img width="423" height="276" alt="5-diskmgmt" src="https://github.com/user-attachments/assets/fb3fd7ef-6cba-4116-aa56-1d3240e79517" />
 
-That is all you need for the Windows PC. From now on, the rest of the guide will focus on installing and configuring Mint Cinnamon Linux and Llama.cpp
+That is all you need for the Windows PC. From now on, the rest of the guide will focus on installing and configuring Mint Cinnamon Linux and Llama.cpp.
+
 Next, download the Mint Cinammon Linux ISO install file:
 
 [Linux Mint 22.2 "Zara" Cinnamon Edition](https://www.linuxmint.com/edition.php?id=322)
+
+<img width="783" height="495" alt="7-mint" src="https://github.com/user-attachments/assets/113861cd-1fea-41fa-ab67-4399231c8e04" />
+
+You will need to create a bootable USB flash drive (8GB or larger). I recommend using Rufus to create the bootable drive:
+[Rufus Download](https://rufus.ie/en/#download)
+
+Run Rufus, then choose the Mint ISO file that you downloaded, then click Create:
+
+<img width="347" height="437" alt="9-mint" src="https://github.com/user-attachments/assets/1e0229af-b875-4420-86db-01920b9ed804" />
+
 
 
 

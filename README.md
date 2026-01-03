@@ -119,7 +119,7 @@ I also enabled automatic backups with the snapshot settings:
 
 # Downloading and Installing CUDA
 
-While several guides and software suites are available, I found that Nvidia's CUDA 13.1 toolkit software and guide instructions well after manually adding the paths in bash.rc. Start by downloading the correct package- Linux, x86_64, Ubuntu, 24.04. I used the deb (network) installer commands, but any of them work fine:
+While several guides and software suites are available, I found that Nvidia's CUDA 13.1 toolkit software and guide instructions worked well (after manually adding the paths in bash.rc.) Start by downloading the correct package- Linux, x86_64, Ubuntu, 24.04. I used the deb (network) installer commands, but any of them work fine:
 
 <img width="664" height="329" alt="33-CUDA" src="https://github.com/user-attachments/assets/cc01b949-f1ac-4b9c-9783-f14f28ad81b3" />
 

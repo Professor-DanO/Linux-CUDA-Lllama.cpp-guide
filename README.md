@@ -242,16 +242,12 @@ If everything works correctly, you should see a link to http://127.0.0.1:8080 on
 
 <img width="634" height="527" alt="48-llamacpp" src="https://github.com/user-attachments/assets/f39cf97a-a4d1-4b55-9418-1db457f6cf5e" />
 
-### My tests were done with the following prompt-
-
-Write a Flappy Bird game program in Java.
-
 ### Quantize the KV cache to 8bits to use less RAM and hopefully speed things up:
 
 llama-server --model Downloads/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 32768
 
 # Benchmark results with RTX 3090 FE and 96GB of DDR5 6800 RAM:
-Each test was run three times, with the average of the three token generation times provided for each model. The prompt was:
+Each test was run three times, with the average of the three token generation times provided for each model. Unless otherwise specified, the context size was 8192. The prompt was:
 
 Write a Flappy Bird game program in Java.
 
@@ -266,11 +262,11 @@ Note the new settings for different hard drive location (/media/dano/models/LLM-
 llama-server --model /media/dano/models/LLM-Models/QWEN3-MOE/Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL-GGUF/Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL-00001-of-00002.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
 
 
-### gpt-oss-120b-UD-Q4_K_XL - 34.5 t/s (with split file of two gguf parts):
+### gpt-oss-120b-UD-Q4_K_XL - 34.5 t/s 
 
 llama-server --model gpt-oss-120b-UD-Q4_K_XL-00001-of-00002.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 1.0 --top-k 0.0 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
-### GPT-OSS-20b MXFP4- 170 t/s (located on second hard drive)
+### GPT-OSS-20b MXFP4- 170 t/s
 
 llama-server --model /media/dano/models/LLM-Models/GPT-OSS/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 1.0 --top-k 0.0 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
@@ -295,22 +291,26 @@ Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf (note the use of a second har
 
 llama-server --model /media/dano/models/LLM-Models/Mistral/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL-GGUF/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.15 --min-p 0.01 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
 
-### Large Model again using another drive for model storage- GLM-4.5-Air-UD-Q4_K_XL (~64GB)- 20 t/s
+### Another large model GLM-4.5-Air-UD-Q4_K_XL (~64GB)- 20 t/s
 
-llama-server --model /media/dano/models/llamacpp-models/GLM-4.5-Air-UD-Q4_K_XL-split-00001-of-00002.gguf --port 8080  -fit on --jinja --temp 0.8 --top-p 0.6 --top-k 2 --repeat-penalty 1.1 --min-p 0.0 --seed 3407 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
+llama-server --model /media/dano/models/llamacpp-models/GLM-4.5-Air-UD-Q4_K_XL-00001-of-00002.gguf --port 8080  -fit on --jinja --temp 0.8 --top-p 0.6 --top-k 2 --repeat-penalty 1.1 --min-p 0.0 --seed 3407 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 
 ### Testing performace of the new '-fit on' flag in llama.cpp versus other methods:
 
 -fit on - 44.6 t/s
+
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
 
 -ot ".ffn_.*_exps.=CPU" - 34 t/s
+
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -ot ".ffn_.*_exps.=CPU" --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
 
 -ot ".ffn_(up|down)_exps.=CPU" - 40.25 t/s
+
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -ot ".ffn_(up|down)_exps.=CPU" --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
 
 Manual setting- --n-cpu-moe 24 -ngl 99 - 44.6 t/s
+
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 --n-cpu-moe 24 -ngl 99 --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
 
 

@@ -16,7 +16,7 @@ Next, you will need to create a new partition on your existing boot drive. This 
 A good size to start is 60-80GB for the Linux disk. However, if you plan to store LLM model files on the Linux partition, you should consider making it 250 - 500 GB if possible. 
 This guide will also show how to access model files on other hard disks in the PC.
 
-Running the Disk Management program:
+Running the Disk Management program (type diskmgmt into the Windows search box):
 
-<img width="486" height="421" alt="1-diskmgmt" src="https://github.com/user-attachments/assets/e8afd4fc-5acc-40aa-bfb7-73e5ca0d501b" />
+<img width="486" height="351" alt="1-diskmgmt" src="https://github.com/user-attachments/assets/e8afd4fc-5acc-40aa-bfb7-73e5ca0d501b" />
 

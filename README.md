@@ -51,6 +51,9 @@ Reboot your computer, then press the appropriate key to enter the boot device se
 
 <img width="450" height="200" alt="IMG_4427" src="https://github.com/user-attachments/assets/4bda77f4-a312-454c-91e7-e53cdfb5f983" />
 
+Once Mint boots, choose the top selection:
+
+<img width="400" height="170" alt="IMG_4428" src="https://github.com/user-attachments/assets/592e292a-16a7-417f-9da0-78091d96c9d5" />
 
 
 

@@ -106,6 +106,14 @@ I also enabled automatic backups with the snapshot settings:
 
 <img width="614" height="332" alt="32-Mint" src="https://github.com/user-attachments/assets/ebdd940f-5648-459e-92f3-f5f33b7ebbe7" />
 
+Installing CUDA
+
+Several non-Nvidia guides and software suites are avaialable, but I found that Nvidia's CUDA 13.1 toolkit worked best. Start by downloading the correct package:
+
+<img width="508" height="344" alt="33-CUDA" src="https://github.com/user-attachments/assets/c699dfc3-f368-4602-b10a-423b6d8d147e" />
+
+
+
 
 
 

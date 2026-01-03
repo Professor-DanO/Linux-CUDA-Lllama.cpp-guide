@@ -28,5 +28,12 @@ Next, choose how large a new partition should be created for the Linux install. 
 
 <img width="423" height="276" alt="5-diskmgmt" src="https://github.com/user-attachments/assets/fb3fd7ef-6cba-4116-aa56-1d3240e79517" />
 
+That is all you need for the Windows PC. From now on, the rest of the guide will focus on installing and configuring Mint Cinnamon Linux and Llama.cpp
+Next, download the Mint Cinammon Linux ISO install file:
+
+[Linux Mint 22.2 "Zara" Cinnamon Edition](https://www.linuxmint.com/edition.php?id=322)
+
+
+
 
 

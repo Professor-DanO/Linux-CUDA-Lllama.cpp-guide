@@ -56,7 +56,8 @@ That is all you need for the Windows PC. From now on, the rest of the guide will
 
 <img width="347" height="437" alt="9-mint" src="https://github.com/user-attachments/assets/1e0229af-b875-4420-86db-01920b9ed804" />
 
-### Reboot your computer, then press the appropriate key to enter the boot device selection menu (typically F12), and choose the USB flash drive. Apologies for the potato quality phone photos.
+### Reboot your computer, then press the appropriate key to enter the boot device selection menu (typically F12), and choose the USB flash drive.
+Apologies for the potato quality phone photos in this section.
 
 <img width="450" height="200" alt="IMG_4427" src="https://github.com/user-attachments/assets/4bda77f4-a312-454c-91e7-e53cdfb5f983" />
 

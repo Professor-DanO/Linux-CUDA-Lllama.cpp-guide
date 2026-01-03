@@ -62,11 +62,16 @@ Go through the standard OS installation routine and create a username and passwo
 
 <img width="354" height="214" alt="IMG_4430" src="https://github.com/user-attachments/assets/60a13cb8-569c-4cb2-aedf-7182929acba9" />
 
-Here is the important bit- Mint will detect the partition you made on the C: drive and use it properly if you choose these options:
+Here is the important bit- Mint will detect the partition you made on the C: drive and use it properly if you choose these options (your partition number may vary):
 
 <img width="486" height="226" alt="IMG_4431" src="https://github.com/user-attachments/assets/cf0b6328-e923-4240-8693-8a0052c2d447" />
 
 <img width="486" height="226" alt="IMG_4432" src="https://github.com/user-attachments/assets/7df982af-3724-432c-b272-8671324e80b8" />
+
+Once the installation finished, remove the USB flash drive then press enter to reboot:
+
+<img width="503" height="185" alt="IMG_4434" src="https://github.com/user-attachments/assets/60026171-3f9d-4073-8b33-ef0e2c57f6f0" />
+
 
 
 

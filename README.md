@@ -10,9 +10,16 @@ The following equipment was used for this guide:
 - Nvidia 3090 FE GPU
 - Two M.2 NVMe SSD drives
 
+# Preparations
 To begin, make sure to back up all your important information, along with creating a Windows recovery drive:
 
 [MS Recovery Drive Instructions] (https://support.microsoft.com/en-us/windows/recovery-drive-abb4691b-5324-6d4a-8766-73fab304c246)
+
+It is also helpful to have a Windows 10 or 11 bootable installation USB Flash Drive, especially if you want to remove the Linux system and boot loader:
+
+[Create installation media for Windows](https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d)
+
+# Creating the new disk partition for Linux
 
 Next, you will need to create a new partition on your existing boot (C:) drive. This is done by 'shrinking' the existing C: drive. 
 A good size to start is 60-80GB for the Linux disk. However, if you plan to store LLM model files on the Linux partition, you should consider making it 250 - 500 GB if possible. 
@@ -31,6 +38,8 @@ Next, choose how large a new partition should be created for the Linux install. 
 <img width="629" height="286" alt="4-diskmgmt" src="https://github.com/user-attachments/assets/6792282d-9ed4-4311-a4db-862ed1f934b4" />
 
 That is all you need for the Windows PC. From now on, the rest of the guide will focus on installing and configuring Mint Cinnamon Linux and Llama.cpp.
+
+# Downloading and installing Linux Mint
 
 Next, download the Mint Cinammon Linux ISO install file:
 
@@ -76,7 +85,7 @@ Your computer will now reboot into the Grub boot loader, which provides options 
 
 <img width="425" height="95" alt="IMG_4435" src="https://github.com/user-attachments/assets/cf713164-9a0a-46ee-ab66-81414c858e43" />
 
-Getting Mint Linux ready to go- Updating, software settings, and security
+# Getting Mint Linux ready to go- Updating, software settings, and security
 
 You will be greeted with the following screen when logging in for the first time, and there are some important steps to take within its menu system:
 
@@ -106,7 +115,8 @@ I also enabled automatic backups with the snapshot settings:
 
 <img width="614" height="332" alt="32-Mint" src="https://github.com/user-attachments/assets/ebdd940f-5648-459e-92f3-f5f33b7ebbe7" />
 
-Installing CUDA
+
+# Downloading and Installing CUDA
 
 Several non-Nvidia guides and software suites are avaialable, but I found that Nvidia's CUDA 13.1 toolkit software and guide worked well after manually adding the paths in bash.rc. Start by downloading the correct package- Linux, x86_64, Ubuntu, 24.04. I used the deb (network) installer commands, but any of them work fine:
 

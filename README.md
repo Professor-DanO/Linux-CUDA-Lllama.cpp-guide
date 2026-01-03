@@ -1,9 +1,9 @@
 # Linux-CUDA-Lllama.cpp-guide
 Welcome to this step-by-step guide for installing dual-boot Linux on an existing Windows PC, along with installing and configuring Lllama.CPP with CUDA!
 
-The following guide shows how to create a dual-boot Windows 10 or 11 and Linux Mint Cinnamon installation. In addition, a full guide to installing Nvidia and CUDA drivers is included. Finally, a complete guide to installing and configuring Lllama.cpp, along with suggested models and settings is provided. These instructions also work well with other Nvidia GPUS and multiple Nvidia GPUs (tested with an RTX 3090 and 4070).
+This guide shows how to create a dual-boot Windows 10 or 11 and Linux Mint Cinnamon system, along with installing Nvidia and CUDA drivers. Also, a complete guide to installing and configuring Lllama.cpp, along with suggested models and settings is provided. These instructions also work well with other Nvidia GPUS and multiple Nvidia GPUs (also tested with an RTX 3090 and 4070).
 
-The following equipment was used for this guide:
+The following equipment was used:
 - Intel Core Ultra 7 265K CPU
 - Gigabyte Aorus Elite WiFi 7 motherboard
 - 96GB DDR5 6800 RAM
@@ -21,11 +21,12 @@ It is also helpful to have a Windows 10 or 11 bootable installation USB Flash Dr
 
 # Creating the new disk partition for Linux
 
-Next, you will need to create a new partition on your existing boot (C:) drive. This is done by 'shrinking' the existing C: drive. 
+Create a new partition on your existing boot (C:) drive. This is done by 'shrinking' the existing C: drive. 
+
 A good size to start is 60-80GB for the Linux disk. However, if you plan to store LLM model files on the Linux partition, you should consider making it 250 - 500 GB if possible. 
 This guide will also show how to access model files on other hard disks in the PC.
 
-Running the Disk Management program (type diskmgmt into the Windows search box):
+### Running the Disk Management program (type diskmgmt into the Windows search box):
 
 <img width="386" height="351" alt="1-diskmgmt" src="https://github.com/user-attachments/assets/e8afd4fc-5acc-40aa-bfb7-73e5ca0d501b" />
 
@@ -37,7 +38,7 @@ Next, choose how large a new partition should be created for the Linux install. 
 
 <img width="629" height="286" alt="4-diskmgmt" src="https://github.com/user-attachments/assets/6792282d-9ed4-4311-a4db-862ed1f934b4" />
 
-That is all you need for the Windows PC. From now on, the rest of the guide will focus on installing and configuring Mint Cinnamon Linux and Llama.cpp.
+That is all you need for the Windows PC. From now on, the rest of the guide will focus on installing and configuring Mint Cinnamon Linux and Llama.cpp!
 
 # Downloading and installing Linux Mint
 
@@ -100,7 +101,7 @@ You will be greeted with the following screen when logging in for the first time
 ### Set up Firewall Security by clicking the Status button so it is enabled:
 <img width="492" height="275" alt="24-Mint" src="https://github.com/user-attachments/assets/e0e86605-3e5e-4381-8afd-44c2c6b5d682" />
 
-### Get the system updated:
+### Update the system files and apps:
 
 <img width="612" height="300" alt="25-Mint" src="https://github.com/user-attachments/assets/860584bb-66d5-427e-89cd-66acecadc162" />
 <img width="774" height="300" alt="26-Mint" src="https://github.com/user-attachments/assets/c3fdceb3-9f80-4547-9809-0bb25b54a60c" />

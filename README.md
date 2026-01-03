@@ -37,9 +37,10 @@ Next, download the Mint Cinammon Linux ISO install file:
 <img width="783" height="495" alt="7-mint" src="https://github.com/user-attachments/assets/113861cd-1fea-41fa-ab67-4399231c8e04" />
 
 You will need to create a bootable USB flash drive (8GB or larger). I recommend using Rufus to create the bootable drive:
+
 [Rufus Download](https://rufus.ie/en/#download)
 
-Run Rufus, then choose the Mint ISO file that you downloaded, then click Create:
+Run Rufus, then choose the Mint ISO file that you downloaded, then click Start:
 
 <img width="347" height="437" alt="9-mint" src="https://github.com/user-attachments/assets/1e0229af-b875-4420-86db-01920b9ed804" />
 

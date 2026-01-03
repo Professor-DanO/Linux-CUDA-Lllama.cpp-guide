@@ -116,7 +116,7 @@ You will now see a set of commands to use in the terminal:
 
 <img width="506" height="164" alt="34-CUDA" src="https://github.com/user-attachments/assets/d9e0bf6d-a4a6-4ae2-ae3c-1735423ffa61" />
 
-Installation Instructions:
+Installation Instructions from the command line in a terminal window:
 
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
 
@@ -132,6 +132,13 @@ After the installation is complete, you will need to open bash.rc with a text ed
 nano ~/.bash.rc
 
 <img width="359" height="125" alt="37-CUDA" src="https://github.com/user-attachments/assets/221b059a-9a5a-434e-9341-a384cd410a56" />
+
+Close the terminal window, then open a new terminal window for the new path to take effect. You should be able to test the installation with nvcc --version as seen below:
+
+<img width="217" height="67" alt="39-CUDA" src="https://github.com/user-attachments/assets/dbfd5631-a0f5-4c87-957f-dbd67bbb02ec" />
+
+
+
 
 
 

@@ -156,7 +156,7 @@ Close the terminal window, then open a new terminal window for the new path to t
 
 # Installing and configuring Llama.cpp
 
-The following guide is mostly taken from the ggml-org Github repository, along with some additional information to get it all working properly. Make sure you are in your working home directory (pwd).
+The following guide is mostly taken from the ggml-org Github repository, along with some additional information to get it all working properly with CUDA. Make sure you are in your working home directory (pwd).
 [Llama.cpp repository page for reference](https://github.com/ggml-org/llama.cpp)
 
 ### Install Git:

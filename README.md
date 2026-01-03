@@ -58,9 +58,14 @@ Click on the Install Mint icon in the upper-left corner:
 
 <img width="320" height="125" alt="IMG_4429" src="https://github.com/user-attachments/assets/c3c96a84-8df9-4b35-b3af-3451e86fe13d" />
 
-Go through the standard OS installation routine, and create a username and password, along with choosing some settings:
+Go through the standard OS installation routine and create a username and password along with choosing some settings:
 
 <img width="354" height="214" alt="IMG_4430" src="https://github.com/user-attachments/assets/60a13cb8-569c-4cb2-aedf-7182929acba9" />
+
+Here is the important bit- Mint will detect the partition you made on the C: drive and use it properly if you choose these options:
+
+<img width="486" height="226" alt="IMG_4431" src="https://github.com/user-attachments/assets/cf0b6328-e923-4240-8693-8a0052c2d447" />
+
 
 
 

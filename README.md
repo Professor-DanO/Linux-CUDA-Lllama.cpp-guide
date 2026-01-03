@@ -131,6 +131,10 @@ After the installation is complete, you will need to open bash.rc with a text ed
 
 nano ~/.bash.rc
 
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
 <img width="359" height="125" alt="37-CUDA" src="https://github.com/user-attachments/assets/221b059a-9a5a-434e-9341-a384cd410a56" />
 
 Close the terminal window, then open a new terminal window for the new path to take effect. You should be able to test the installation with nvcc --version as seen below:

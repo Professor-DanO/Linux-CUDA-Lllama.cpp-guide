@@ -66,6 +66,11 @@ Here is the important bit- Mint will detect the partition you made on the C: dri
 
 <img width="486" height="226" alt="IMG_4431" src="https://github.com/user-attachments/assets/cf0b6328-e923-4240-8693-8a0052c2d447" />
 
+<img width="486" height="240" alt="IMG_4432" src="https://github.com/user-attachments/assets/7df982af-3724-432c-b272-8671324e80b8" />
+
+
+
+
 
 
 

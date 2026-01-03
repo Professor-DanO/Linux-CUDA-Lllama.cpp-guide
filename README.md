@@ -20,8 +20,13 @@ Running the Disk Management program (type diskmgmt into the Windows search box):
 
 <img width="386" height="351" alt="1-diskmgmt" src="https://github.com/user-attachments/assets/e8afd4fc-5acc-40aa-bfb7-73e5ca0d501b" />
 
-Next, choose your main boot drive, right click on it, then pick the Shrink Volume option:
+Next, choose your main boot drive, right click on the C: volume, then pick the Shrink Volume option:
 
 <img width="425" height="326" alt="3-diskmgmt" src="https://github.com/user-attachments/assets/271c33eb-a289-405b-9500-4b691763b19e" />
+
+Next, choose how large a new partition should be created for the Linux install. In this case I picked 250,000 MB, which is 250 GB:
+
+<img width="423" height="276" alt="5-diskmgmt" src="https://github.com/user-attachments/assets/fb3fd7ef-6cba-4116-aa56-1d3240e79517" />
+
 
 

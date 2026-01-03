@@ -20,3 +20,8 @@ Running the Disk Management program (type diskmgmt into the Windows search box):
 
 <img width="386" height="351" alt="1-diskmgmt" src="https://github.com/user-attachments/assets/e8afd4fc-5acc-40aa-bfb7-73e5ca0d501b" />
 
+Next, choose your main boot drive, right click on it, then pick the Shrink Volume option:
+
+<img width="525" height="416" alt="3-diskmgmt" src="https://github.com/user-attachments/assets/271c33eb-a289-405b-9500-4b691763b19e" />
+
+

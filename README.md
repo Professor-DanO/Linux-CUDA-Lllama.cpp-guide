@@ -1,11 +1,11 @@
 # Linux-CUDA-Lllama.cpp-guide
 Welcome to this step-by-step guide for installing dual-boot Linux on an existing Windows PC, along with installing and configuring Lllama.CPP with CUDA!
 
-This guide shows how to create a dual-boot Windows 10 or 11 and Linux Mint Cinnamon system, along with installing Nvidia and CUDA drivers. Also, a complete guide to installing and configuring Lllama.cpp, along with suggested models and settings is provided. Finally, a set of benchmark results is included. These instructions also work well with other Nvidia GPUS and multiple Nvidia GPUs (also tested with an RTX 3090 and 4070).
+This guide shows how to create a dual-boot Windows 10 or 11 and Linux Mint Cinnamon system, along with installing Nvidia and CUDA drivers. Complete instructions for installing and configuring Lllama.cpp, along with suggested models and settings, is provided. A comprehensive set of benchmark results using several different models is also included. This manual also works well with other Nvidia GPUS and multiple Nvidia GPUs (e.g., RTX 3090 and 4070 in the same PC).
 
 The following equipment was used:
 - Intel Core Ultra 7 265K CPU
-- Gigabyte Aorus Elite WiFi 7 motherboard
+- Gigabyte Aorus Elite WiFi 7 motherboard (Intel 200S overclocking and XMP memory profile enabled)
 - 96GB DDR5 6800 RAM
 - Nvidia 3090 FE GPU
 - Two M.2 NVMe SSD drives

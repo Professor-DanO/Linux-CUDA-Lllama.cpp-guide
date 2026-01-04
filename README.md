@@ -1,5 +1,5 @@
 # Linux-CUDA-Lllama.cpp-guide
-Welcome to this step-by-step guide for installing dual-boot Linux on an existing Windows PC, along with installing and configuring Lllama.CPP with CUDA!
+Welcome to this step-by-step primer for installing dual-boot Linux on an existing Windows PC, along with installing and configuring Lllama.CPP with CUDA!
 
 This guide shows how to create a dual-boot Windows 10 or 11 and Linux Mint Cinnamon system, along with installing Nvidia and CUDA drivers. Complete instructions for installing and configuring Lllama.cpp, along with suggested models and settings, is provided. A comprehensive set of benchmark results using several different models is also included. This manual also works well with other Nvidia GPUS and multiple Nvidia GPUs (e.g., RTX 3090 and 4070 in the same PC).
 

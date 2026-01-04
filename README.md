@@ -30,13 +30,16 @@ This guide will also show how to access model files on other hard disks in the P
 
 <img width="386" height="351" alt="1-diskmgmt" src="https://github.com/user-attachments/assets/e8afd4fc-5acc-40aa-bfb7-73e5ca0d501b" />
 
+
 Next, choose your main boot drive, right click on the C: volume, then pick the Shrink Volume option:
 
 <img width="425" height="326" alt="3-diskmgmt" src="https://github.com/user-attachments/assets/271c33eb-a289-405b-9500-4b691763b19e" />
 
-Next, choose how large a new partition should be created for the Linux install. In this case I picked 250,000 MB, which is 250 GB:
+
+Now, choose how large a new partition should be created for the Linux install. In this case I picked 250,000 MB, which is 250 GB:
 
 <img width="629" height="286" alt="4-diskmgmt" src="https://github.com/user-attachments/assets/6792282d-9ed4-4311-a4db-862ed1f934b4" />
+
 
 That is all you need for the Windows PC. From now on, the rest of the guide will focus on installing and configuring Mint Cinnamon Linux and Llama.cpp!
 

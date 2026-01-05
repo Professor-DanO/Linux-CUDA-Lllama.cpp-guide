@@ -252,10 +252,23 @@ If everything works correctly, you should see a link to http://127.0.0.1:8080 on
 ```
 llama-server --model Downloads/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 32768
 ```
-# My benchmark results with RTX 3090 FE and 96GB of DDR5 6800 RAM:
+# Benchmark results with RTX 3090 FE and 96GB of DDR5 6800 RAM:
 Each test was run three times, with the average of the three token generation times provided for each model. Unless otherwise specified, the context size was 8192. The prompt was:
 
 Write a Flappy Bird game program in Java.
+
+
+| Model  | Performance |
+| ------------- | ------------- |
+| Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL  | 44.6 t/s  |
+| Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL  | 33.7 t/s |
+| GPT-OSS-120b-UD-Q4_K_XL  | 34.5 t/s   |
+| GPT-OSS-20b-MXFP4  | 170 t/s  |
+| MiniMax-M2.1-UD-Q3_K_XL-  | 20 t/s  |
+| Qwen3-VL-32B-Instruct-UD-Q4_K_XL  | 35.5 t/s  |
+| Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL  | 38.4 t/s  |
+| GLM-4.5-Air-UD-Q4_K_XL  | 20 t/s  |
+
 
 ### Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- 44.6 t/s
 ```
@@ -268,7 +281,7 @@ Note the new settings for different hard drive location (/media/dano/models/LLM-
 llama-server --model /media/dano/models/LLM-Models/QWEN3-MOE/Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL-GGUF/Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL-00001-of-00002.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096
 ```
 
-### gpt-oss-120b-UD-Q4_K_XL - 34.5 t/s 
+### GPT-OSS-120b-UD-Q4_K_XL - 34.5 t/s 
 ```
 llama-server --model gpt-oss-120b-UD-Q4_K_XL-00001-of-00002.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 1.0 --top-k 0.0 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 ```

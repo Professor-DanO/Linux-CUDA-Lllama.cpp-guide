@@ -260,20 +260,23 @@ Write a Flappy Bird game program in Java.
 
 | Model  | Performance |
 | ------------- | ------------- |
+| Qwen3-4B-Instruct-2507-UD-Q6_K_XL L  | 125.5 t/s  |
 | Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL  | 44.6 t/s  |
 | Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL  | 33.7 t/s |
 | GPT-OSS-120b-UD-Q4_K_XL  | 34.5 t/s   |
 | GPT-OSS-20b-MXFP4  | 170 t/s  |
 | MiniMax-M2.1-UD-Q3_K_XL-  | 20 t/s  |
+| GLM-4.5-Air-UD-Q4_K_XL  | 20 t/s  |
 | Qwen3-VL-32B-Instruct-UD-Q4_K_XL  | 35.5 t/s  |
 | Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL  | 38.4 t/s  |
-| GLM-4.5-Air-UD-Q4_K_XL  | 20 t/s  |
+
 
 
 ### Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- 44.6 t/s
 ```
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 ```
+
 ### Larger quant version of Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL - 33.7 t/s
 
 Note the new settings for different hard drive location (/media/dano/models/LLM-Models/QWEN3-MOE/..) and split, two-part model files (..00001-of-00002.gguf): 
@@ -285,23 +288,32 @@ llama-server --model /media/dano/models/LLM-Models/QWEN3-MOE/Qwen3-Next-80B-A3B-
 ```
 llama-server --model gpt-oss-120b-UD-Q4_K_XL-00001-of-00002.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 1.0 --top-k 0.0 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 ```
+
 ### GPT-OSS-20b MXFP4- 170 t/s
 ```
 llama-server --model /media/dano/models/LLM-Models/GPT-OSS/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 1.0 --top-k 0.0 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 ```
+
 ### Long context- 60K text prompt, 66K context- Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- prompt processing 675 t/s, token generation 38 t/s
 ```
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 66000
 ```
+
 ### Very long context- 205K text prompt, 260K context- Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL- prompt processing 585 t/s, token generation 26 t/s
 ```
 llama-server --model Qwen3-Next-80B-A3B-Instruct-UD-Q4_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 66000
 ```
+
 ### Large Model test - MiniMax-M2.1- (about the largest I could fit with room for some decent context and kv cache ~ 102GB) - 20 t/s
 ```
 llama-server --model /media/dano/models/LLM-Models/MiniMax-M2.1/MiniMax-M2.1-UD-Q3_K_XL-00001-of-00003.gguf --port 8080 -fit on --jinja --temp 1.0 --top-p 0.95 --top-k 40 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 ```
 System prompt: You are a helpful assistant. Your name is MiniMax-M2.1 and is built by MiniMax.
+
+### Another large model GLM-4.5-Air-UD-Q4_K_XL (~64GB)- 20 t/s
+```
+llama-server --model /media/dano/models/llamacpp-models/GLM-4.5-Air-UD-Q4_K_XL-00001-of-00002.gguf --port 8080  -fit on --jinja --temp 0.8 --top-p 0.6 --top-k 2 --repeat-penalty 1.1 --min-p 0.0 --seed 3407 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
+```
 
 ### Dense model testing:
 Qwen3-VL-32B-Instruct-UD-Q4_K_XL.gguf - 35.5 t/s
@@ -312,10 +324,7 @@ Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf (note the use of a second har
 ```
 llama-server --model /media/dano/models/LLM-Models/Mistral/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL-GGUF/Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.15 --min-p 0.01 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 ```
-### Another large model GLM-4.5-Air-UD-Q4_K_XL (~64GB)- 20 t/s
-```
-llama-server --model /media/dano/models/llamacpp-models/GLM-4.5-Air-UD-Q4_K_XL-00001-of-00002.gguf --port 8080  -fit on --jinja --temp 0.8 --top-p 0.6 --top-k 2 --repeat-penalty 1.1 --min-p 0.0 --seed 3407 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
-```
+
 ### Testing performace of the new '-fit on' flag in llama.cpp versus other methods:
 
 -fit on - 44.6 t/s

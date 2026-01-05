@@ -265,8 +265,8 @@ Write a Flappy Bird game program in Java.
 | Qwen3-Next-80B-A3B-Instruct-UD-Q6_K_XL  | 33.7 t/s |
 | GPT-OSS-120b-UD-Q4_K_XL  | 34.5 t/s   |
 | GPT-OSS-20b-MXFP4  | 170 t/s  |
-| MiniMax-M2.1-UD-Q3_K_XL-  | 20 t/s  |
-| GLM-4.5-Air-UD-Q4_K_XL  | 20 t/s  |
+| MiniMax-M2.1-UD-Q3_K_XL  | 20 t/s  |
+| GLM-4.5-Air-UD-Q4_K_XL  | 20.1 t/s  |
 | Qwen3-VL-32B-Instruct-UD-Q4_K_XL  | 35.5 t/s  |
 | Devstral-Small-2-24B-Instruct-2512-UD-Q6_K_XL  | 38.4 t/s  |
 

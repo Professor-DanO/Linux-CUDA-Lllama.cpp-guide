@@ -310,7 +310,7 @@ llama-server --model /media/dano/models/LLM-Models/MiniMax-M2.1/MiniMax-M2.1-UD-
 ```
 System prompt: You are a helpful assistant. Your name is MiniMax-M2.1 and is built by MiniMax.
 
-### Another large model GLM-4.5-Air-UD-Q4_K_XL (~64GB)- 20 t/s
+### Another large model - GLM-4.5-Air-UD-Q4_K_XL (~64GB)- 20.2 t/s
 ```
 llama-server --model /media/dano/models/llamacpp-models/GLM-4.5-Air-UD-Q4_K_XL-00001-of-00002.gguf --port 8080  -fit on --jinja --temp 0.8 --top-p 0.6 --top-k 2 --repeat-penalty 1.1 --min-p 0.0 --seed 3407 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 8192
 ```

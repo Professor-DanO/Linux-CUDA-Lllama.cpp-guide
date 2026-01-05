@@ -253,7 +253,7 @@ If everything works correctly, you should see a link to http://127.0.0.1:8080 on
 llama-server --model Downloads/Qwen3-4B-Instruct-2507-UD-Q6_K_XL.gguf --port 8080 -fit on --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --threads -1 --no-mmap --flash-attn 1 --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 32768
 ```
 # Benchmark results with RTX 3090 FE and 96GB of DDR5 6800 RAM:
-Each test was run three times, with the average of the three token generation times provided for each model. Unless otherwise specified, the context size was 8192. The prompt was:
+Each test was run three times, with the average of the three token generation times provided for each model. Unless otherwise specified, the context size was 8192 and kv caches were q8_0. The prompt was:
 
 Write a Flappy Bird game program in Java.
 

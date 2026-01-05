@@ -11,11 +11,11 @@ The following equipment was used:
 - Two M.2 NVMe SSD drives
 
 # Preparations
-To begin, make sure to back up all your important information, along with creating a Windows recovery drive:
+To begin, make sure to back up all your important information, along with creating a Windows recovery drive if needed:
 
 [MS Recovery Drive Instructions](https://support.microsoft.com/en-us/windows/recovery-drive-abb4691b-5324-6d4a-8766-73fab304c246)
 
-It is also helpful to have a Windows 10 or 11 bootable installation USB Flash Drive, especially if you want to remove the Linux system and boot loader:
+It is also helpful to have a Windows 10 or 11 bootable installation USB Flash Drive, especially if you want to remove the Linux system and boot loader later on:
 
 [Create installation media for Windows](https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d)
 

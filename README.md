@@ -1,3 +1,12 @@
+## Mac Users
+
+This project focuses on Windows dual-boot, but Mac users can still benefit:
+- The documentation concepts apply to any system
+- However, given native CUDA support on macOS is officially dead, with NVIDIA pulling the pulg
+- after Toolkit 11.1 rendering it incompatible with modern Macs(Silicon).
+- Adding common work arounds like MPS -> Apple's Metal Performance Shaders via PyTorch/TensorFlow
+- or if all else fails cloud-based GPU's would be of great service to the ML Mac community. 
+
 # Linux-CUDA-Lllama.cpp-guide
 Welcome to this step-by-step primer for installing dual-boot Linux on an existing Windows PC, along with installing and configuring Lllama.CPP with CUDA!
 
